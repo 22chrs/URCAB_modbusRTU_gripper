@@ -1,0 +1,99 @@
+
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU# mvn clean install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.ur.thph:modbus_urcap >----------------------
+[INFO] Building modbus_urcap 1.0
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ modbus_urcap ---
+[INFO] Deleting /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ modbus_urcap ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 60 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ modbus_urcap ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 10 source files to /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR :
+[INFO] -------------------------------------------------------------
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[8,45] cannot find symbol
+  symbol:   class ProgramNodeService
+  location: package com.ur.urcap.api.contribution.program
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[14,51] cannot find symbol
+  symbol: class ProgramNodeService
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[5,45] cannot find symbol
+  symbol:   class ProgramNodeContribution
+  location: package com.ur.urcap.api.contribution.program
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[10,56] cannot find symbol
+  symbol: class ProgramNodeContribution
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/Activator.java:[10,45] cannot find symbol
+  symbol:   class ProgramNodeService
+  location: package com.ur.urcap.api.contribution.program
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[16,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[21,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[26,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[31,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[36,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[18,69] type argument com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution is not within bounds of type-variable C
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[18,8] com.ur.thph.modbus_urcap.impl.GripperProgramNodeView is not abstract and does not override abstract method buildUI(javax.swing.JPanel,com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>) in com.ur.urcap.api.contribution.program.swing.SwingProgramNodeView
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[33,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[27,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[40,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[45,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[63,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[90,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/Activator.java:[23,39] cannot find symbol
+  symbol:   class ProgramNodeService
+  location: class com.ur.thph.modbus_urcap.impl.Activator
+[INFO] 19 errors
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.051 s
+[INFO] Finished at: 2024-10-27T12:30:09+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.6.0:compile (default-compile) on project modbus_urcap: Compilation failure: Compilation failure:
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[8,45] cannot find symbol
+[ERROR]   symbol:   class ProgramNodeService
+[ERROR]   location: package com.ur.urcap.api.contribution.program
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[14,51] cannot find symbol
+[ERROR]   symbol: class ProgramNodeService
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[5,45] cannot find symbol
+[ERROR]   symbol:   class ProgramNodeContribution
+[ERROR]   location: package com.ur.urcap.api.contribution.program
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[10,56] cannot find symbol
+[ERROR]   symbol: class ProgramNodeContribution
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/Activator.java:[10,45] cannot find symbol
+[ERROR]   symbol:   class ProgramNodeService
+[ERROR]   location: package com.ur.urcap.api.contribution.program
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[16,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[21,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[26,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[31,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[36,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[18,69] type argument com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution is not within bounds of type-variable C
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[18,8] com.ur.thph.modbus_urcap.impl.GripperProgramNodeView is not abstract and does not override abstract method buildUI(javax.swing.JPanel,com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>) in com.ur.urcap.api.contribution.program.swing.SwingProgramNodeView
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[33,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[27,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[40,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[45,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[63,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java:[90,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/Activator.java:[23,39] cannot find symbol
+[ERROR]   symbol:   class ProgramNodeService
+[ERROR]   location: class com.ur.thph.modbus_urcap.impl.Activator
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU# 

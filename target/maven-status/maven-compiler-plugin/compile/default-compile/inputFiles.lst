@@ -1,0 +1,10 @@
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/ModbusDaemonService.java
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/Activator.java
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeContribution.java
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/DaemonInstallationNodeContribution.java
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/UnknownResponseException.java
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/DaemonInstallationNodeService.java
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/ModbusDaemonInterface.java
+/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/DaemonInstallationNodeView.java

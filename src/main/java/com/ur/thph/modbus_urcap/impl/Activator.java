@@ -13,11 +13,11 @@ public class Activator implements BundleActivator {
     @Override
     public void start(BundleContext bundleContext) throws Exception {
         System.out.println("Activator says Modbus Service!");
-        
+
         ModbusDaemonService modbusDaemonService = new ModbusDaemonService();
         DaemonInstallationNodeService installationService = new DaemonInstallationNodeService(modbusDaemonService);
         GripperProgramNodeService gripperProgramNodeService = new GripperProgramNodeService();
-        
+
         bundleContext.registerService(DaemonService.class, modbusDaemonService, null);
         bundleContext.registerService(SwingInstallationNodeService.class, installationService, null);
         bundleContext.registerService(ProgramNodeService.class, gripperProgramNodeService, null);

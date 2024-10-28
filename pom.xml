@@ -6,7 +6,7 @@
 	<groupId>com.ur.thph</groupId>
 	<artifactId>modbus_urcap</artifactId>
 	<version>1.0</version>
-	<name>modbus_urcap</name>
+	<name>urcap_modbusgripper_rtu</name>
 	<packaging>bundle</packaging>
 
 	<properties>

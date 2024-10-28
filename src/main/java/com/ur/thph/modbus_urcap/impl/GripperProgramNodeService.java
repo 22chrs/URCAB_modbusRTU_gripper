@@ -3,16 +3,17 @@
 package com.ur.thph.modbus_urcap.impl;
 
 import java.util.Locale;
+import java.io.InputStream;
 
+import com.ur.urcap.api.contribution.program.swing.SwingProgramNodeService;
+import com.ur.urcap.api.contribution.program.ContributionConfiguration;
+import com.ur.urcap.api.contribution.ProgramNodeContribution;
+import com.ur.urcap.api.contribution.program.ProgramAPIProvider;
 import com.ur.urcap.api.contribution.ViewAPIProvider;
-import com.ur.urcap.api.contribution.ProgramNodeService;
-import com.ur.urcap.api.contribution.ContributionConfiguration;
-import com.ur.urcap.api.contribution.CreationContext;
-import com.ur.urcap.api.contribution.ProgramAPIProvider;
 import com.ur.urcap.api.domain.data.DataModel;
+import com.ur.urcap.api.contribution.program.CreationContext;
 
-public class GripperProgramNodeService implements ProgramNodeService {
-
+public class GripperProgramNodeService implements SwingProgramNodeService<GripperProgramNodeContribution, GripperProgramNodeView> {
     @Override
     public String getId() {
         return "GripperProgramNode";
@@ -34,7 +35,13 @@ public class GripperProgramNodeService implements ProgramNodeService {
     }
 
     @Override
-    public GripperProgramNodeContribution createNode(ProgramAPIProvider apiProvider, GripperProgramNodeView view, DataModel model, CreationContext context) {
-        return new GripperProgramNodeContribution(apiProvider, view, model);
+    public GripperProgramNodeContribution createNode(
+        ProgramAPIProvider apiProvider,
+        GripperProgramNodeView view,
+        DataModel model,
+        CreationContext context
+    ) {
+        return new GripperProgramNodeContribution(apiProvider, view, model, context);
     }
+
 }

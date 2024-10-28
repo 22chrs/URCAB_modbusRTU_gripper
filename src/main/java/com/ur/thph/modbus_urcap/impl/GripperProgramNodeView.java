@@ -2,36 +2,45 @@
 
 package com.ur.thph.modbus_urcap.impl;
 
-import java.awt.Component;
-import java.awt.Dimension;
-
-import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-
+import com.ur.urcap.api.contribution.ContributionProvider;
 import com.ur.urcap.api.contribution.ViewAPIProvider;
 import com.ur.urcap.api.contribution.program.swing.SwingProgramNodeView;
+import com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution;
 
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.BoxLayout;
+import javax.swing.Box;
+import javax.swing.JPanel;
+import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.event.DocumentEvent;
 
 public class GripperProgramNodeView implements SwingProgramNodeView<GripperProgramNodeContribution> {
+
+    private final ViewAPIProvider apiProvider;
+    private ContributionProvider<GripperProgramNodeContribution> contribution; // Add this line
 
     private JComboBox<String> actionComboBox;
     private JTextField positionTextField;
     private JComboBox<String> colorComboBox;
     private JTextField fanSpeedTextField;
-
+    
     private JLabel positionLabel;
     private JLabel colorLabel;
     private JLabel fanSpeedLabel;
 
     public GripperProgramNodeView(ViewAPIProvider apiProvider) {
-        // Constructor
+        this.apiProvider = apiProvider;
     }
 
     @Override
-    public void buildUI(JPanel panel, final GripperProgramNodeContribution contribution) {
+    public void buildUI(JPanel panel, ContributionProvider<GripperProgramNodeContribution> provider) {
+        this.contribution = provider;
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
@@ -107,7 +116,7 @@ public class GripperProgramNodeView implements SwingProgramNodeView<GripperProgr
         actionComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                contribution.onActionSelected((String) actionComboBox.getSelectedItem());
+                contribution.get().onActionSelected((String) actionComboBox.getSelectedItem());
                 updateVisibility();
             }
         });
@@ -115,41 +124,41 @@ public class GripperProgramNodeView implements SwingProgramNodeView<GripperProgr
         positionTextField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                contribution.onPositionChanged(positionTextField.getText());
+                contribution.get().onPositionChanged(positionTextField.getText());
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                contribution.onPositionChanged(positionTextField.getText());
+                contribution.get().onPositionChanged(positionTextField.getText());
             }
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                contribution.onPositionChanged(positionTextField.getText());
+                contribution.get().onPositionChanged(positionTextField.getText());
             }
         });
 
         colorComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                contribution.onColorSelected((String) colorComboBox.getSelectedItem());
+                contribution.get().onColorSelected((String) colorComboBox.getSelectedItem());
             }
         });
 
         fanSpeedTextField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                contribution.onFanSpeedChanged(fanSpeedTextField.getText());
+                contribution.get().onFanSpeedChanged(fanSpeedTextField.getText());
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                contribution.onFanSpeedChanged(fanSpeedTextField.getText());
+                contribution.get().onFanSpeedChanged(fanSpeedTextField.getText());
             }
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                contribution.onFanSpeedChanged(fanSpeedTextField.getText());
+                contribution.get().onFanSpeedChanged(fanSpeedTextField.getText());
             }
         });
 

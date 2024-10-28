@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1730040829518
+Build-Jdk: 11.0.24
+Built-By: root
+Bundle-Activator: com.ur.thph.modbus_urcap.impl.Activator
+Bundle-Category: URCap
+Bundle-ContactAddress: 123 URCap Street
+Bundle-Copyright: Copyright notice (C)
+Bundle-Description: This is a description of the URCap
+Bundle-LicenseType: License type
+Bundle-ManifestVersion: 2
+Bundle-Name: urcap_modbusgripper_rtu
+Bundle-SymbolicName: com.ur.thph.modbus_urcap
+Bundle-Vendor: URCaps R us Inc.
+Bundle-Version: 1.0.0
+Created-By: Apache Maven Bundle Plugin
+Import-Package: com.ur.urcap.api.contribution;version="[1.7,2)",com.ur.u
+ rcap.api.contribution.installation;version="[1.7,2)",com.ur.urcap.api.c
+ ontribution.installation.swing;version="[1.7,2)",com.ur.urcap.api.contr
+ ibution.program;version="[1.7,2)",com.ur.urcap.api.contribution.program
+ .swing;version="[1.7,2)",com.ur.urcap.api.domain.data;version="[1.7,2)"
+ ,com.ur.urcap.api.domain.script;version="[1.7,2)",javax.swing,javax.swi
+ ng.event,javax.swing.text,org.apache.xmlrpc;version="[3.1,4)",org.apach
+ e.xmlrpc.client;version="[3.1,4)",org.osgi.framework;version="[1.6,2)"
+Tool: Bnd-2.1.0.20130426-122213

@@ -3,9 +3,10 @@
 package com.ur.thph.modbus_urcap.impl;
 
 import com.ur.urcap.api.contribution.ProgramNodeContribution;
-import com.ur.urcap.api.contribution.ProgramAPIProvider;
+import com.ur.urcap.api.contribution.program.ProgramAPIProvider;
 import com.ur.urcap.api.domain.data.DataModel;
 import com.ur.urcap.api.domain.script.ScriptWriter;
+import com.ur.urcap.api.contribution.program.CreationContext;
 
 
 public class GripperProgramNodeContribution implements ProgramNodeContribution {
@@ -19,10 +20,16 @@ public class GripperProgramNodeContribution implements ProgramNodeContribution {
     private final GripperProgramNodeView view;
     private final DataModel model;
 
-    public GripperProgramNodeContribution(ProgramAPIProvider apiProvider, GripperProgramNodeView view, DataModel model) {
+    public GripperProgramNodeContribution(
+        ProgramAPIProvider apiProvider,
+        GripperProgramNodeView view,
+        DataModel model,
+        CreationContext context
+    ) {
         this.apiProvider = apiProvider;
         this.view = view;
         this.model = model;
+        // Use the context if needed
     }
 
     @Override

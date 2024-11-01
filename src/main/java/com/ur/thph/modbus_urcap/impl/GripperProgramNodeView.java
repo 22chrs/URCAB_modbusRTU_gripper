@@ -5,31 +5,34 @@ package com.ur.thph.modbus_urcap.impl;
 import com.ur.urcap.api.contribution.ContributionProvider;
 import com.ur.urcap.api.contribution.ViewAPIProvider;
 import com.ur.urcap.api.contribution.program.swing.SwingProgramNodeView;
-import com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution;
 
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
-import javax.swing.BoxLayout;
-import javax.swing.Box;
 import javax.swing.JPanel;
-import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.event.DocumentEvent;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import com.ur.urcap.api.domain.userinteraction.keyboard.KeyboardInputFactory;
+import com.ur.urcap.api.domain.userinteraction.keyboard.KeyboardNumberInput;
+import com.ur.urcap.api.domain.userinteraction.keyboard.KeyboardInputCallback;
+import com.ur.urcap.api.domain.userinteraction.inputvalidation.InputValidator;
 
 public class GripperProgramNodeView implements SwingProgramNodeView<GripperProgramNodeContribution> {
 
     private final ViewAPIProvider apiProvider;
-    private ContributionProvider<GripperProgramNodeContribution> contribution; // Add this line
+    private ContributionProvider<GripperProgramNodeContribution> contribution;
 
     private JComboBox<String> actionComboBox;
     private JTextField positionTextField;
     private JComboBox<String> colorComboBox;
     private JTextField fanSpeedTextField;
-    
+
     private JLabel positionLabel;
     private JLabel colorLabel;
     private JLabel fanSpeedLabel;
@@ -41,76 +44,134 @@ public class GripperProgramNodeView implements SwingProgramNodeView<GripperProgr
     @Override
     public void buildUI(JPanel panel, ContributionProvider<GripperProgramNodeContribution> provider) {
         this.contribution = provider;
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        panel.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(5, 5, 5, 5);
 
-        // Action selection
-        Box actionBox = Box.createHorizontalBox();
-        actionBox.setAlignmentX(Component.LEFT_ALIGNMENT);
+        KeyboardInputFactory keyboardInputFactory = apiProvider.getUserInterfaceAPI().getUserInteraction().getKeyboardInputFactory();
 
+        // Row 0: Action selection
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 0.0;
         JLabel actionLabel = new JLabel("Action:");
-        actionComboBox = new JComboBox<String>(new String[] {
+        panel.add(actionLabel, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        actionComboBox = new JComboBox<>(new String[] {
             "Move Gripper and Wait",
             "Move Gripper without Wait",
             "Set LED Color",
             "Home Gripper",
             "Set Fan Speed"
         });
-        actionComboBox.setMaximumSize(new Dimension(200, 30));
+        panel.add(actionComboBox, gbc);
 
-        actionBox.add(actionLabel);
-        actionBox.add(Box.createHorizontalStrut(10));
-        actionBox.add(actionComboBox);
-
-        panel.add(actionBox);
-        panel.add(Box.createVerticalStrut(10));
-
-        // Position input
-        Box positionBox = Box.createHorizontalBox();
-        positionBox.setAlignmentX(Component.LEFT_ALIGNMENT);
-
+        // Row 1: Position input
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 0.0;
         positionLabel = new JLabel("Gripper Position:");
+        panel.add(positionLabel, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.weightx = 1.0;
         positionTextField = new JTextField();
-        positionTextField.setMaximumSize(new Dimension(200, 30));
+        panel.add(positionTextField, gbc);
 
-        positionBox.add(positionLabel);
-        positionBox.add(Box.createHorizontalStrut(10));
-        positionBox.add(positionTextField);
+        // Create keyboard input for position
+        final KeyboardNumberInput<Double> positionKeyboardInput = keyboardInputFactory.createDoubleKeypadInput();
+        positionKeyboardInput.setErrorValidator(new InputValidator<Double>() {
+            @Override
+            public boolean isValid(Double value) {
+                return value >= 0;
+            }
 
-        panel.add(positionBox);
-        panel.add(Box.createVerticalStrut(10));
+            @Override
+            public String getMessage(Double invalidEntry) {
+                return "Please enter a non-negative number.";
+            }
+        });
+        positionTextField.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                positionKeyboardInput.show(positionTextField, new KeyboardInputCallback<Double>() {
+                    @Override
+                    public void onOk(Double value) {
+                        positionTextField.setText(String.valueOf(value.intValue()));
+                        contribution.get().onPositionChanged(positionTextField.getText());
+                    }
 
-        // Color selection
-        Box colorBox = Box.createHorizontalBox();
-        colorBox.setAlignmentX(Component.LEFT_ALIGNMENT);
+                    @Override
+                    public void onCancel() {
+                        // Do nothing on cancel
+                    }
+                });
+            }
+        });
 
+        // Row 2: Color selection
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.weightx = 0.0;
         colorLabel = new JLabel("LED Color:");
-        colorComboBox = new JComboBox<String>(new String[] {
+        panel.add(colorLabel, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.weightx = 1.0;
+        colorComboBox = new JComboBox<>(new String[] {
             "red", "green", "blue", "white", "purple", "pink", "orange", "yellow"
         });
-        colorComboBox.setMaximumSize(new Dimension(200, 30));
+        panel.add(colorComboBox, gbc);
 
-        colorBox.add(colorLabel);
-        colorBox.add(Box.createHorizontalStrut(10));
-        colorBox.add(colorComboBox);
-
-        panel.add(colorBox);
-        panel.add(Box.createVerticalStrut(10));
-
-        // Fan Speed input
-        Box fanSpeedBox = Box.createHorizontalBox();
-        fanSpeedBox.setAlignmentX(Component.LEFT_ALIGNMENT);
-
+        // Row 3: Fan Speed input
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.weightx = 0.0;
         fanSpeedLabel = new JLabel("Fan Speed:");
+        panel.add(fanSpeedLabel, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.weightx = 1.0;
         fanSpeedTextField = new JTextField();
-        fanSpeedTextField.setMaximumSize(new Dimension(200, 30));
+        panel.add(fanSpeedTextField, gbc);
 
-        fanSpeedBox.add(fanSpeedLabel);
-        fanSpeedBox.add(Box.createHorizontalStrut(10));
-        fanSpeedBox.add(fanSpeedTextField);
+        // Create keyboard input for fan speed
+        final KeyboardNumberInput<Double> fanSpeedKeyboardInput = keyboardInputFactory.createDoubleKeypadInput();
+        fanSpeedKeyboardInput.setErrorValidator(new InputValidator<Double>() {
+            @Override
+            public boolean isValid(Double value) {
+                return value >= 0;
+            }
 
-        panel.add(fanSpeedBox);
-        panel.add(Box.createVerticalStrut(10));
+            @Override
+            public String getMessage(Double invalidEntry) {
+                return "Please enter a non-negative number.";
+            }
+        });
+        fanSpeedTextField.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                fanSpeedKeyboardInput.show(fanSpeedTextField, new KeyboardInputCallback<Double>() {
+                    @Override
+                    public void onOk(Double value) {
+                        fanSpeedTextField.setText(String.valueOf(value.intValue()));
+                        contribution.get().onFanSpeedChanged(fanSpeedTextField.getText());
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        // Do nothing on cancel
+                    }
+                });
+            }
+        });
 
         // Add action listeners
         actionComboBox.addActionListener(new ActionListener() {
@@ -121,44 +182,10 @@ public class GripperProgramNodeView implements SwingProgramNodeView<GripperProgr
             }
         });
 
-        positionTextField.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                contribution.get().onPositionChanged(positionTextField.getText());
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                contribution.get().onPositionChanged(positionTextField.getText());
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                contribution.get().onPositionChanged(positionTextField.getText());
-            }
-        });
-
         colorComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 contribution.get().onColorSelected((String) colorComboBox.getSelectedItem());
-            }
-        });
-
-        fanSpeedTextField.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                contribution.get().onFanSpeedChanged(fanSpeedTextField.getText());
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                contribution.get().onFanSpeedChanged(fanSpeedTextField.getText());
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                contribution.get().onFanSpeedChanged(fanSpeedTextField.getText());
             }
         });
 
@@ -168,60 +195,37 @@ public class GripperProgramNodeView implements SwingProgramNodeView<GripperProgr
 
     private void updateVisibility() {
         String action = (String) actionComboBox.getSelectedItem();
-        if (action.equals("Move Gripper and Wait") || action.equals("Move Gripper without Wait")) {
-            positionLabel.setVisible(true);
-            positionTextField.setVisible(true);
-        } else {
-            positionLabel.setVisible(false);
-            positionTextField.setVisible(false);
-        }
+        boolean isMoveGripper = action.contains("Move Gripper");
+        positionLabel.setVisible(isMoveGripper);
+        positionTextField.setVisible(isMoveGripper);
 
-        if (action.equals("Set LED Color")) {
-            colorLabel.setVisible(true);
-            colorComboBox.setVisible(true);
-        } else {
-            colorLabel.setVisible(false);
-            colorComboBox.setVisible(false);
-        }
+        boolean isSetLEDColor = action.equals("Set LED Color");
+        colorLabel.setVisible(isSetLEDColor);
+        colorComboBox.setVisible(isSetLEDColor);
 
-        if (action.equals("Set Fan Speed")) {
-            fanSpeedLabel.setVisible(true);
-            fanSpeedTextField.setVisible(true);
-        } else {
-            fanSpeedLabel.setVisible(false);
-            fanSpeedTextField.setVisible(false);
-        }
+        boolean isSetFanSpeed = action.equals("Set Fan Speed");
+        fanSpeedLabel.setVisible(isSetFanSpeed);
+        fanSpeedTextField.setVisible(isSetFanSpeed);
+
+        // Revalidate and repaint the panel to reflect changes
+        positionLabel.getParent().revalidate();
+        positionLabel.getParent().repaint();
     }
 
     public void setAction(String action) {
         actionComboBox.setSelectedItem(action);
-    }
-
-    public String getAction() {
-        return (String) actionComboBox.getSelectedItem();
+        updateVisibility();
     }
 
     public void setPosition(String position) {
         positionTextField.setText(position);
     }
 
-    public String getPosition() {
-        return positionTextField.getText();
-    }
-
     public void setColor(String color) {
         colorComboBox.setSelectedItem(color);
     }
 
-    public String getColor() {
-        return (String) colorComboBox.getSelectedItem();
-    }
-
     public void setFanSpeed(String speed) {
         fanSpeedTextField.setText(speed);
-    }
-
-    public String getFanSpeed() {
-        return fanSpeedTextField.getText();
     }
 }

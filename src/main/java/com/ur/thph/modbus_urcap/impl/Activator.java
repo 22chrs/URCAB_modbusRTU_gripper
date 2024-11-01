@@ -1,4 +1,5 @@
 // Activator.java
+//! https://github.com/EbbeFuglsang/Modbus_URCap
 
 package com.ur.thph.modbus_urcap.impl;
 
@@ -7,7 +8,7 @@ import org.osgi.framework.BundleContext;
 
 import com.ur.urcap.api.contribution.DaemonService;
 import com.ur.urcap.api.contribution.installation.swing.SwingInstallationNodeService;
-import com.ur.urcap.api.contribution.ProgramNodeService;
+import com.ur.urcap.api.contribution.program.swing.SwingProgramNodeService;
 
 public class Activator implements BundleActivator {
     @Override
@@ -20,7 +21,7 @@ public class Activator implements BundleActivator {
 
         bundleContext.registerService(DaemonService.class, modbusDaemonService, null);
         bundleContext.registerService(SwingInstallationNodeService.class, installationService, null);
-        bundleContext.registerService(ProgramNodeService.class, gripperProgramNodeService, null);
+        bundleContext.registerService(SwingProgramNodeService.class, gripperProgramNodeService, null); // Updated line
     }
 
     @Override

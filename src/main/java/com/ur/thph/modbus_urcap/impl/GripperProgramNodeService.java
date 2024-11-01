@@ -3,11 +3,9 @@
 package com.ur.thph.modbus_urcap.impl;
 
 import java.util.Locale;
-import java.io.InputStream;
 
 import com.ur.urcap.api.contribution.program.swing.SwingProgramNodeService;
 import com.ur.urcap.api.contribution.program.ContributionConfiguration;
-import com.ur.urcap.api.contribution.ProgramNodeContribution;
 import com.ur.urcap.api.contribution.program.ProgramAPIProvider;
 import com.ur.urcap.api.contribution.ViewAPIProvider;
 import com.ur.urcap.api.domain.data.DataModel;
@@ -43,5 +41,4 @@ public class GripperProgramNodeService implements SwingProgramNodeService<Grippe
     ) {
         return new GripperProgramNodeContribution(apiProvider, view, model, context);
     }
-
 }

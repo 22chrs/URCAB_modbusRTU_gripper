@@ -3,6 +3,7 @@
 package com.ur.thph.modbus_urcap.impl;
 
 import java.util.Locale;
+import java.io.InputStream;
 
 import com.ur.urcap.api.contribution.ViewAPIProvider;
 import com.ur.urcap.api.contribution.installation.ContributionConfiguration;
@@ -10,6 +11,7 @@ import com.ur.urcap.api.contribution.installation.CreationContext;
 import com.ur.urcap.api.contribution.installation.InstallationAPIProvider;
 import com.ur.urcap.api.contribution.installation.swing.SwingInstallationNodeService;
 import com.ur.urcap.api.domain.data.DataModel;
+import com.ur.urcap.api.contribution.ProgramNodeContribution;
 
 public class DaemonInstallationNodeService
 		implements SwingInstallationNodeService<DaemonInstallationNodeContribution, DaemonInstallationNodeView> {

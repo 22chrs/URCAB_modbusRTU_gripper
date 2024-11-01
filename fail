@@ -1,0 +1,124 @@
+/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU#
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU# mvn clean install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.ur.thph:modbus_urcap >----------------------
+[INFO] Building modbus_urcap 1.0
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ modbus_urcap ---
+[INFO] Deleting /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ modbus_urcap ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 60 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ modbus_urcap ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 10 source files to /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/target/classes
+[INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR :
+[INFO] -------------------------------------------------------------
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[10,45] cannot find symbol
+  symbol:   class ProgramNodeContribution
+  location: package com.ur.urcap.api.contribution.program
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[42,12] cannot find symbol
+  symbol:   class ProgramNodeContribution
+  location: class com.ur.thph.modbus_urcap.impl.GripperProgramNodeService
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[15,8] com.ur.thph.modbus_urcap.impl.GripperProgramNodeService is not abstract and does not override abstract method getHTML() in com.ur.urcap.api.contribution.ProgramNodeService
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[17,19] getHTML() in com.ur.thph.modbus_urcap.impl.GripperProgramNodeService cannot implement getHTML() in com.ur.urcap.api.contribution.ProgramNodeService
+  return type java.lang.String is not compatible with java.io.InputStream
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[16,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[26,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[31,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[36,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[43,51] incompatible types: com.ur.urcap.api.domain.URCapAPI cannot be converted to com.ur.urcap.api.contribution.program.ProgramAPIProvider
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[118,29] cannot find symbol
+  symbol:   method onActionSelected(java.lang.String)
+  location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[126,29] cannot find symbol
+  symbol:   method onPositionChanged(java.lang.String)
+  location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[131,29] cannot find symbol
+  symbol:   method onPositionChanged(java.lang.String)
+  location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[136,29] cannot find symbol
+  symbol:   method onPositionChanged(java.lang.String)
+  location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[143,29] cannot find symbol
+  symbol:   method onColorSelected(java.lang.String)
+  location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[150,29] cannot find symbol
+  symbol:   method onFanSpeedChanged(java.lang.String)
+  location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[155,29] cannot find symbol
+  symbol:   method onFanSpeedChanged(java.lang.String)
+  location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[160,29] cannot find symbol
+  symbol:   method onFanSpeedChanged(java.lang.String)
+  location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[INFO] 17 errors
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.132 s
+[INFO] Finished at: 2024-10-27T15:01:33+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.6.0:compile (default-compile) on project modbus_urcap: Compilation failure: Compilation failure:
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[10,45] cannot find symbol
+[ERROR]   symbol:   class ProgramNodeContribution
+[ERROR]   location: package com.ur.urcap.api.contribution.program
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[42,12] cannot find symbol
+[ERROR]   symbol:   class ProgramNodeContribution
+[ERROR]   location: class com.ur.thph.modbus_urcap.impl.GripperProgramNodeService
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[15,8] com.ur.thph.modbus_urcap.impl.GripperProgramNodeService is not abstract and does not override abstract method getHTML() in com.ur.urcap.api.contribution.ProgramNodeService
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[17,19] getHTML() in com.ur.thph.modbus_urcap.impl.GripperProgramNodeService cannot implement getHTML() in com.ur.urcap.api.contribution.ProgramNodeService
+[ERROR]   return type java.lang.String is not compatible with java.io.InputStream
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[16,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[26,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[31,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[36,5] method does not override or implement a method from a supertype
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeService.java:[43,51] incompatible types: com.ur.urcap.api.domain.URCapAPI cannot be converted to com.ur.urcap.api.contribution.program.ProgramAPIProvider
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[118,29] cannot find symbol
+[ERROR]   symbol:   method onActionSelected(java.lang.String)
+[ERROR]   location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[126,29] cannot find symbol
+[ERROR]   symbol:   method onPositionChanged(java.lang.String)
+[ERROR]   location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[131,29] cannot find symbol
+[ERROR]   symbol:   method onPositionChanged(java.lang.String)
+[ERROR]   location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[136,29] cannot find symbol
+[ERROR]   symbol:   method onPositionChanged(java.lang.String)
+[ERROR]   location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[143,29] cannot find symbol
+[ERROR]   symbol:   method onColorSelected(java.lang.String)
+[ERROR]   location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[150,29] cannot find symbol
+[ERROR]   symbol:   method onFanSpeedChanged(java.lang.String)
+[ERROR]   location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[155,29] cannot find symbol
+[ERROR]   symbol:   method onFanSpeedChanged(java.lang.String)
+[ERROR]   location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/src/main/java/com/ur/thph/modbus_urcap/impl/GripperProgramNodeView.java:[160,29] cannot find symbol
+[ERROR]   symbol:   method onFanSpeedChanged(java.lang.String)
+[ERROR]   location: variable contribution of type com.ur.urcap.api.contribution.ContributionProvider<com.ur.thph.modbus_urcap.impl.GripperProgramNodeContribution>
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+root@hejhej:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU# 

@@ -7,10 +7,11 @@ import com.ur.urcap.api.contribution.program.ProgramAPIProvider;
 import com.ur.urcap.api.domain.data.DataModel;
 import com.ur.urcap.api.domain.script.ScriptWriter;
 import com.ur.urcap.api.contribution.program.CreationContext;
-
+import com.ur.urcap.api.domain.undoredo.UndoRedoManager;
+import com.ur.urcap.api.domain.undoredo.UndoableChanges;
 
 public class GripperProgramNodeContribution implements ProgramNodeContribution {
-    
+
     private static final String ACTION_KEY = "action";
     private static final String POSITION_KEY = "position";
     private static final String COLOR_KEY = "color";
@@ -19,6 +20,7 @@ public class GripperProgramNodeContribution implements ProgramNodeContribution {
     private final ProgramAPIProvider apiProvider;
     private final GripperProgramNodeView view;
     private final DataModel model;
+    private final UndoRedoManager undoRedoManager;
 
     public GripperProgramNodeContribution(
         ProgramAPIProvider apiProvider,
@@ -29,7 +31,7 @@ public class GripperProgramNodeContribution implements ProgramNodeContribution {
         this.apiProvider = apiProvider;
         this.view = view;
         this.model = model;
-        // Use the context if needed
+        this.undoRedoManager = apiProvider.getProgramAPI().getUndoRedoManager();
     }
 
     @Override
@@ -116,20 +118,39 @@ public class GripperProgramNodeContribution implements ProgramNodeContribution {
         }
     }
 
-
-    public void onActionSelected(String action) {
-        model.set(ACTION_KEY, action);
+    public void onActionSelected(final String action) {
+        undoRedoManager.recordChanges(new UndoableChanges() {
+            @Override
+            public void executeChanges() {
+                model.set(ACTION_KEY, action);
+            }
+        });
     }
 
-    public void onPositionChanged(String position) {
-        model.set(POSITION_KEY, position);
+    public void onPositionChanged(final String position) {
+        undoRedoManager.recordChanges(new UndoableChanges() {
+            @Override
+            public void executeChanges() {
+                model.set(POSITION_KEY, position);
+            }
+        });
     }
 
-    public void onColorSelected(String color) {
-        model.set(COLOR_KEY, color);
+    public void onColorSelected(final String color) {
+        undoRedoManager.recordChanges(new UndoableChanges() {
+            @Override
+            public void executeChanges() {
+                model.set(COLOR_KEY, color);
+            }
+        });
     }
 
-    public void onFanSpeedChanged(String speed) {
-        model.set(FANSPEED_KEY, speed);
+    public void onFanSpeedChanged(final String speed) {
+        undoRedoManager.recordChanges(new UndoableChanges() {
+            @Override
+            public void executeChanges() {
+                model.set(FANSPEED_KEY, speed);
+            }
+        });
     }
 }

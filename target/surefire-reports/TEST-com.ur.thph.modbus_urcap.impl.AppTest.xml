@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ur.thph.modbus_urcap.impl.AppTest" time="0.052" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ur.thph.modbus_urcap.impl.AppTest" time="0.073" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
@@ -14,7 +14,7 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/target/surefire 2024-10-27T15-53-46_558-jvmRun1 surefire18058653757674501993tmp surefire_014905197791156425201tmp"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/target/surefire 2024-11-01T01-24-04_551-jvmRun1 surefire8337372469229347872tmp surefire_03341849425574710466tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/target/test-classes:/mnt/c/Users/chris/Documents/Git/totos-kiosk/devices/ur-sdk/URCap_ModbusGripper_RTU/target/classes:/root/.m2/repository/org/osgi/org.osgi.core/4.3.0/org.osgi.core-4.3.0.jar:/root/.m2/repository/com/ur/urcap/api/1.8.0/api-1.8.0.jar:/root/.m2/repository/org/apache/xmlrpc/xmlrpc-client/3.1.3.0/xmlrpc-client-3.1.3.0.jar:/root/.m2/repository/org/apache/xmlrpc/xmlrpc-common/3.1.3.0/xmlrpc-common-3.1.3.0.jar:/root/.m2/repository/org/apache/ws/commons/util/ws-commons-util/1.0.2.0/ws-commons-util-1.0.2.0.jar:/root/.m2/repository/commons-httpclient/commons-httpclient/3.1.0.0/commons-httpclient-3.1.0.0.jar:/root/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/root/.m2/repository/junit/junit/4.12/junit-4.12.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -55,5 +55,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testApp" classname="com.ur.thph.modbus_urcap.impl.AppTest" time="0.003"/>
+  <testcase name="testApp" classname="com.ur.thph.modbus_urcap.impl.AppTest" time="0.004"/>
 </testsuite>

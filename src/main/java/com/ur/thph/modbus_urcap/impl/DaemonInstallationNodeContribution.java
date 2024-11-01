@@ -87,7 +87,9 @@ public class DaemonInstallationNodeContribution implements InstallationNodeContr
 		writer.appendLine("set_tool_voltage(24)");
 
 		// Wait 5 seconds for the gripper's Modbus system to initialize
-		writer.appendLine("sleep(5)");
+		writer.appendLine("sleep(1)");
+		writer.appendLine("set_tool_communication(True, 1000000, 2, 1, 1.5, 3.5)");
+		writer.appendLine("sleep(1)");
 
 		writer.assign(XMLRPC_VARIABLE, "rpc_factory(\"xmlrpc\", \"http://127.0.0.1:40408/RPC2\")");
 		
